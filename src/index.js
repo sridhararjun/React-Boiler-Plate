@@ -1,9 +1,11 @@
-// import "./css/main.css";
-import "./scss/main.scss";
+import React from "react";
+import { render } from "react-dom";
+import App from "./components/app";
 
-import { hello, world } from "./js/module";
+const rootEl = document.getElementById("root");
 
-hello();
-world();
-console.log("Hello World!!!");
-console.log("webpack is watching");
+render(<App />, rootEl);
+
+if (module.hot) {
+  module.hot.accept();
+}

@@ -4,11 +4,11 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  //   entry: "./src/index.js",
-  entry: {
-    app: "./src/index.js",
-    about: "./src/js/about.js"
-  },
+  entry: "./src/index.js",
+  // entry: {
+  //   app: "./src/index.js",
+  //   about: "./src/js/about.js"
+  // },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist")
@@ -47,7 +47,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["babel-preset-react"]
+          }
+        }
       }
     ]
   },
@@ -55,7 +60,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebPackPlugin({
-      title: "Multiple Bundles HTML Webpack Plugin"
+      hash: true,
+      title: "Yelp-Clone",
+      filename: "index.html",
+      template: "./src/public/index.html"
     })
   ]
 };

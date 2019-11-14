@@ -1,7 +1,7 @@
 {
   "name": "Webpack",
   "version": "1.0.0",
-  "description": "> A [HowToCode.io](https://www.howtocode.io) tutorial on learning [Webpack 2](https://webpack.js.org)",
+  "description": "React Boiler Plate developed from scratch without create-react-app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,10 +13,14 @@
   "author": "Sridhar Muraleedar",
   "license": "MIT",
   "devDependencies": {
+    "@babel/preset-es2015": "^7.0.0-beta.53",
     "autoprefixer": "^9.7.1",
+    "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.0.6",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
@@ -35,5 +39,10 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router": "^5.1.2"
+  }
 }
